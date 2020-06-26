@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Corona Suraksha</string>
+    <string name="tab_text_1">CONNECT</string>
+    <string name="tab_text_2">AUTO</string>
+    <string name="tab_text_3">MANUAL</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="text_view_1">00:15</string>
+    <string name="button_connect_bluetooth">connect</string>
+    <string name="sprinkler_switch">Sanitizer</string>
+    <string name="uv_switch_status">UV Light : ON</string>
+    <string name="sprinkler_switch_status">Sanitizer : ON</string>
+    <string name="timer_status">Timer : 00:15</string>
+    <string name="uv_switch">UV light</string>
+    <string name="bluetooth_connected">Bluetooth : Connected</string>
+    <string name="status_name">Device Status</string>
+    <string name="switches_name">Switches</string>
+    <string name="timer_selector_name">Select Timer</string>
+</resources>
