@@ -25,10 +25,10 @@
 
     <ImageView
         android:id="@+id/bluetooth_image"
-        android:layout_width="152dp"
-        android:layout_height="162dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginBottom="148dp"
-        android:src="@drawable/bluetooth_image"
+        app:srcCompat="@drawable/bluetooth_image"
         app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -37,9 +37,9 @@
 
     <ImageView
         android:id="@+id/bluetooth_status"
-        android:layout_width="101dp"
-        android:layout_height="109dp"
-        android:src="@drawable/bluetooth_disconnected_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/bluetooth_disconnected_image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

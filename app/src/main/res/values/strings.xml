@@ -16,4 +16,6 @@
     <string name="status_name">Device Status</string>
     <string name="switches_name">Switches</string>
     <string name="timer_selector_name">Select Timer</string>
+    <string name="about_us">About us</string>
+    <string name="exit">Exit</string>
 </resources>
