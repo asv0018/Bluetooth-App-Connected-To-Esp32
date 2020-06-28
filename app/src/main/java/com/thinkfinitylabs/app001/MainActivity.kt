@@ -14,55 +14,35 @@ import androidx.viewpager.widget.PagerAdapter
 import com.thinkfinitylabs.app001.ui.TabsAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import androidx.appcompat.widget.Toolbar
+import com.google.android.material.appbar.AppBarLayout
 
 class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-
-        supportActionBar?.apply {
-            setLogo(R.mipmap.ic_launcher_round)
-            setDisplayHomeAsUpEnabled(true)
-        }
+        toolbar.title = "Corona Rakshak"
+        setSupportActionBar(toolbar)
         // when the activity is launched, these three tabs are made
         tabs!!.addTab(tabs!!.newTab().setText(R.string.tab_text_1))
         tabs!!.addTab(tabs!!.newTab().setText(R.string.tab_text_2))
         tabs!!.addTab(tabs!!.newTab().setText(R.string.tab_text_3))
         tabs!!.tabGravity = TabLayout.GRAVITY_FILL
-
+        tabs!!.bringToFront()
         // adapter is created to connect the tabs and the view pager
         view_pager!!.adapter = TabsAdapter(this,supportFragmentManager,tabs!!.tabCount)
 
         view_pager.addOnPageChangeListener(TabLayout.TabLayoutOnPageChangeListener(tabs))
+        tabs!!.addOnTabSelectedListener(TabLayout.ViewPagerOnTabSelectedListener(view_pager))
 
-        tabs!!.addOnTabSelectedListener(
-            object : TabLayout.OnTabSelectedListener{
-                override fun onTabReselected(p0: TabLayout.Tab?) {
-                    if (p0 != null) {
-                        view_pager!!.currentItem = p0.position
-                        Log.d("CHECK HERE","TAB CHANGED")
-                    }
-                }
-
-                override fun onTabUnselected(p0: TabLayout.Tab?) {
-                    Log.d("CHECK HERE","TAB CHANGED")
-                }
-
-                override fun onTabSelected(p0: TabLayout.Tab?) {
-                    Log.d("CHECK HERE","TAB CHANGED")
-                }
-
-            }
-        )
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         // Inflate the menu to use in the action bar
-        Log.d("CHECK THIS","I M HERE")
         val inflater = menuInflater
         inflater.inflate(R.menu.toolbar_menu, menu)
-        return super.onCreateOptionsMenu(menu)
+        super.onCreateOptionsMenu(menu)
+        return true
     }
 
 
@@ -78,6 +58,10 @@ class MainActivity : AppCompatActivity() {
 
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    fun selectFragment(position:Int){
+        view_pager.setCurrentItem(position,true)
     }
 
     }
